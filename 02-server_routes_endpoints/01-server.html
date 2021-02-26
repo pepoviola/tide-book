@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Request and Response - Tide Book</title>
+        <title>Set up a Server - Tide Book</title>
         
         
 
@@ -18,26 +18,28 @@
         <meta name="theme-color" content="#ffffff" />
 
         
-        <link rel="icon" href="favicon.svg">
+        <link rel="icon" href="../favicon.svg">
         
         
-        <link rel="shortcut icon" href="favicon.png">
+        <link rel="shortcut icon" href="../favicon.png">
         
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
         
-        <link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
         
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
         
@@ -47,7 +49,7 @@
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
-            var path_to_root = "";
+            var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
@@ -93,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="01-introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="02-server_routes_endpoints.html"><strong aria-hidden="true">2.</strong> Server, Routes and Endpoints</a></li><li class="chapter-item expanded "><a href="03-request-response.html" class="active"><strong aria-hidden="true">3.</strong> Request and Response</a></li><li class="chapter-item expanded "><a href="04-state.html"><strong aria-hidden="true">4.</strong> Server and request state</a></li><li class="chapter-item expanded "><a href="05-middleware.html"><strong aria-hidden="true">5.</strong> Middleware</a></li><li class="chapter-item expanded "><a href="06-json.html"><strong aria-hidden="true">6.</strong> Parsing and formatting JSON</a></li><li class="chapter-item expanded "><a href="a-further-reading.html"><strong aria-hidden="true">7.</strong> Further reading</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../introduction/00-introduction.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="../introduction/01-getting_started.html">Getting Started</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Tide Basics</li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.</strong> Anatomy of a Tide application</div></li><li class="chapter-item expanded "><a href="../02-server_routes_endpoints/00-intro.html"><strong aria-hidden="true">2.</strong> Server, Routes and Endpoints</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02-server_routes_endpoints/01-server.html" class="active"><strong aria-hidden="true">2.1.</strong> Set up a Server</a></li><li class="chapter-item expanded "><a href="../02-server_routes_endpoints/02-endpoints.html"><strong aria-hidden="true">2.2.</strong> Handle requests with endpoints</a></li><li class="chapter-item expanded "><a href="../02-server_routes_endpoints/03-routes.html"><strong aria-hidden="true">2.3.</strong> Defining and composing routes</a></li></ol></li><li class="chapter-item expanded "><a href="../03-request-response/00-request-response.html"><strong aria-hidden="true">3.</strong> Request and Response</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03-request-response/01-request.html"><strong aria-hidden="true">3.1.</strong> The Request struct</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.2.</strong> Response and the ResponseBuilder</div></li></ol></li><li class="chapter-item expanded "><a href="../04-state/00-intro.html"><strong aria-hidden="true">4.</strong> State</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../04-state/01-server_state.html"><strong aria-hidden="true">4.1.</strong> Server State</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.2.</strong> Request State</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Middleware</div></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Tide in Practice</li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Testing Tide Applications</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Deploying Tide Applications</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">7.1.</strong> Bare-bones deployment</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.2.</strong> Deploying behind a reverse-proxy</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.3.</strong> Containerizing a Tide Application</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> JSON Web Services with Tide</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> HTTP Websites with Tide</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Using Tide with a Database</div></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../further-reading.html">Further reading</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -128,9 +130,11 @@
                     <h1 class="menu-title">Tide Book</h1>
 
                     <div class="right-buttons">
-                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                        
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
+                        
                         
                     </div>
                 </div>
@@ -159,25 +163,36 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#request-and-response" id="request-and-response">Request and Response</a></h1>
-<p>We already described how endpoints are essentially functions that take a <code>Request</code> and return a <code>Response</code>. The <code>Request</code> object contains all information about the HTTP request being made, information like the URL that is requested, HTTP headers, cookies, query string parameters can all be found in the <code>Request</code> struct.</p>
-<p>The <code>Request</code> object in Tide is a bit more than just an HTTP request. It is also used to pass information about the application state and the request state into the endpoint. We will look into this in the next chapter about <code>State</code>.</p>
-<p>The <code>Response</code> struct in turn allows us to craft a complete HTTP response. It contains the <code>Response</code> body, but also a set of HTTP headers and a response code. While all this can be accessed directly through the <code>Response</code> type. It can be convenient to create a <code>Response</code> through the Tide <code>ResponseBuilder</code>.</p>
-<p>== Request ==</p>
-<p>== Response and ResponseBuilder ==</p>
+                        <h1><a class="header" href="#set-up-a-server" id="set-up-a-server">Set up a Server</a></h1>
+<p>A basic Tide <code>Server</code> is constructed with <code>tide::new()</code>.</p>
+<pre><pre class="playground"><code class="language-rust edition2018 no_run">#[async_std::main]
+async fn main() -&gt; tide::Result&lt;()&gt; {
+    let server = tide::new();
+    Ok(())
+}
+</code></pre></pre>
+<p>The server can then be started using the asynchronous <code>listen</code> method.</p>
+<pre><pre class="playground"><code class="language-rust edition2018 no_run">#[async_std::main]
+async fn main() -&gt; tide::Result&lt;()&gt; {
+    let server = tide::new();
+    server.listen(&quot;127.0.0.1:8080&quot;).await?;
+    Ok(())
+}
+</code></pre></pre>
+<p>While this is the simpelest Tide application that you can build, it is not very useful. It will return a 404 HTTP response to any request. To be able to return anything useful we will need to handle requests using one or more <code>Endpoint</code>s</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="02-server_routes_endpoints.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../02-server_routes_endpoints/00-intro.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="04-state.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../02-server_routes_endpoints/02-endpoints.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -189,13 +204,13 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="02-server_routes_endpoints.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../02-server_routes_endpoints/00-intro.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a rel="next" href="04-state.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../02-server_routes_endpoints/02-endpoints.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
@@ -218,14 +233,14 @@
         
 
         
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
         
 
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
         
